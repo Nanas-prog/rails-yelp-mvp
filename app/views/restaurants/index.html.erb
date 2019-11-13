@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Yelp<%= link_to '⚡️ Create a new restaurant ⚡️', new_restaurant_path, class: "btn btn-success"%></a>
+</nav>
+<div class="container col-6 pt-1">
+  <div class="col justify-content-center">
+  <h1 class="col justify-content-center pl-5 pt-3"> Our restaurants</h1>
+    <div class ="list-unstyled">
+    <% @restaurants.each do |r| %>
+    <div class=" card m-4 p-2 justify-content-center w-100">
+    <img src="https://images.unsplash.com/photo-1533757114113-3e1d3e9d766c?ixlib=rb-1.2.1&auto=format&fit=crop&w=799&q=80">
+      <h2><%= r.name %></h2>
+      <h4><%= r.category %></h4>
+      <p><%= r.address %></p>
+      <%= link_to 'See restaurant', restaurant_path(r), class: "btn btn-light" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
